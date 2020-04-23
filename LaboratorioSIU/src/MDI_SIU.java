@@ -1,5 +1,6 @@
 import Mantenimiento.Seccion_QuemeH;
 import Mantenimiento.Facultad_QuemeH;
+import Asignaciones.AsignacionM_QuemeH;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,6 +15,7 @@ public class MDI_SIU extends javax.swing.JFrame {
 
     Facultad_QuemeH ventanafacultad;
     Seccion_QuemeH ventanaseccion;
+    AsignacionM_QuemeH ventanaam;
     /**
      * Creates new form MDI_SIU
      */
@@ -108,6 +110,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Asignar Maestro");
+        copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyMenuItemActionPerformed(evt);
+            }
+        });
         Asignaciones.add(copyMenuItem);
 
         menuBar.add(Asignaciones);
@@ -147,6 +154,12 @@ public class MDI_SIU extends javax.swing.JFrame {
         ventanafacultad=new Facultad_QuemeH();
         jDesktopPane1.add(ventanafacultad);
     }//GEN-LAST:event_saveAsMenuItemActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+        // TODO add your handling code here:
+        ventanaam=new AsignacionM_QuemeH();
+        jDesktopPane1.add(ventanaam);
+    }//GEN-LAST:event_copyMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
