@@ -1,6 +1,13 @@
+
+import Asignaciones.Asignacion_Maestros_BarriosR;
+import Mantenimiento.Cursos_BarriosR;
+import Mantenimiento.Maestros_BarriosR;
+
+
 import Mantenimiento.Seccion_QuemeH;
 import Mantenimiento.Facultad_QuemeH;
 import Asignaciones.AsignacionM_QuemeH;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -14,12 +21,18 @@ import Mantenimiento.inf_M_Al_FloresK;
  */
 public class MDI_SIU extends javax.swing.JFrame {
 
+    private Maestros_BarriosR ventanamaestros;
+    private Cursos_BarriosR ventanacursos;
+    private Asignacion_Maestros_BarriosR ventanaAsignacionM;
+    
+
 
  private inf_M_Al_FloresK ventanaMA;
 
     Facultad_QuemeH ventanafacultad;
     Seccion_QuemeH ventanaseccion;
     AsignacionM_QuemeH ventanaam;
+
 
     /**
      * Creates new form MDI_SIU
@@ -37,8 +50,13 @@ public class MDI_SIU extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+
+        JdesktopPane1 = new javax.swing.JDesktopPane();
+        jToolBar1 = new javax.swing.JToolBar();
+
         desktopPane = new javax.swing.JDesktopPane();
         jDesktopPane1 = new javax.swing.JDesktopPane();
+
         menuBar = new javax.swing.JMenuBar();
         Mantenimientos = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -54,6 +72,11 @@ public class MDI_SIU extends javax.swing.JFrame {
         contentMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+
+        jToolBar1.setRollover(true);
+        JdesktopPane1.add(jToolBar1);
+        jToolBar1.setBounds(380, 100, 100, 25);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -74,6 +97,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         openMenuItem.setMnemonic('o');
         openMenuItem.setText("Maestros");
+        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openMenuItemActionPerformed(evt);
+            }
+        });
         Mantenimientos.add(openMenuItem);
 
         saveMenuItem.setMnemonic('s');
@@ -98,6 +126,11 @@ public class MDI_SIU extends javax.swing.JFrame {
         Mantenimientos.add(jMenuItem1);
 
         jMenuItem2.setText("Cursos");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         Mantenimientos.add(jMenuItem2);
 
         exitMenuItem.setMnemonic('x');
@@ -149,11 +182,11 @@ public class MDI_SIU extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+            .addComponent(JdesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+            .addComponent(JdesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
         );
 
         pack();
@@ -163,6 +196,23 @@ public class MDI_SIU extends javax.swing.JFrame {
         ventanaseccion=new Seccion_QuemeH();
         jDesktopPane1.add(ventanaseccion);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+
+    private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
+        ventanamaestros=new Maestros_BarriosR();
+        JdesktopPane1.add(ventanamaestros);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_openMenuItemActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+ventanacursos=new Cursos_BarriosR();
+        JdesktopPane1.add(ventanacursos);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+        ventanaAsignacionM=new Asignacion_Maestros_BarriosR();
+        JdesktopPane1.add(ventanaAsignacionM);        // TODO add your handling code here:
 
     private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
  
@@ -184,6 +234,7 @@ public class MDI_SIU extends javax.swing.JFrame {
         // TODO add your handling code here:
         ventanaam=new AsignacionM_QuemeH();
         jDesktopPane1.add(ventanaam);
+
     }//GEN-LAST:event_copyMenuItemActionPerformed
 
     /**
@@ -223,16 +274,17 @@ public class MDI_SIU extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Asignaciones;
+    private javax.swing.JDesktopPane JdesktopPane1;
     private javax.swing.JMenu Mantenimientos;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
