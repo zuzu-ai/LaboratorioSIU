@@ -6,6 +6,7 @@ import Asignaciones.AsignacionM_QuemeH;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import Mantenimiento.inf_M_Al_FloresK;
 
 /**
  *
@@ -13,9 +14,13 @@ import Asignaciones.AsignacionM_QuemeH;
  */
 public class MDI_SIU extends javax.swing.JFrame {
 
+
+ private inf_M_Al_FloresK ventanaMA;
+
     Facultad_QuemeH ventanafacultad;
     Seccion_QuemeH ventanaseccion;
     AsignacionM_QuemeH ventanaam;
+
     /**
      * Creates new form MDI_SIU
      */
@@ -73,6 +78,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         saveMenuItem.setMnemonic('s');
         saveMenuItem.setText("Alumnos");
+        saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveMenuItemActionPerformed(evt);
+            }
+        });
         Mantenimientos.add(saveMenuItem);
 
         saveAsMenuItem.setMnemonic('a');
@@ -106,6 +116,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         cutMenuItem.setMnemonic('t');
         cutMenuItem.setText("Asignar Alumno");
+        cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cutMenuItemActionPerformed(evt);
+            }
+        });
         Asignaciones.add(cutMenuItem);
 
         copyMenuItem.setMnemonic('y');
@@ -149,6 +164,16 @@ public class MDI_SIU extends javax.swing.JFrame {
         jDesktopPane1.add(ventanaseccion);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
+ 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cutMenuItemActionPerformed
+
+    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
+        ventanaMA =new inf_M_Al_FloresK();
+        jDesktopPane1.add( ventanaMA);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saveMenuItemActionPerformed
     private void saveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemActionPerformed
         // TODO add your handling code here:
         ventanafacultad=new Facultad_QuemeH();
