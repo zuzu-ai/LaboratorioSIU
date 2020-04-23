@@ -1,3 +1,6 @@
+import Mantenimiento.Seccion_QuemeH;
+import Mantenimiento.Facultad_QuemeH;
+import Asignaciones.AsignacionM_QuemeH;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,6 +13,9 @@
  */
 public class MDI_SIU extends javax.swing.JFrame {
 
+    Facultad_QuemeH ventanafacultad;
+    Seccion_QuemeH ventanaseccion;
+    AsignacionM_QuemeH ventanaam;
     /**
      * Creates new form MDI_SIU
      */
@@ -27,6 +33,7 @@ public class MDI_SIU extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         Mantenimientos = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -43,6 +50,20 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+        );
+
+        desktopPane.add(jDesktopPane1);
+        jDesktopPane1.setBounds(0, 0, 710, 470);
+
         Mantenimientos.setMnemonic('f');
         Mantenimientos.setText("Mantenimientos");
 
@@ -56,6 +77,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         saveAsMenuItem.setMnemonic('a');
         saveAsMenuItem.setText("Facultad");
+        saveAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveAsMenuItemActionPerformed(evt);
+            }
+        });
         Mantenimientos.add(saveAsMenuItem);
 
         jMenuItem1.setText("Carreras");
@@ -84,6 +110,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Asignar Maestro");
+        copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyMenuItemActionPerformed(evt);
+            }
+        });
         Asignaciones.add(copyMenuItem);
 
         menuBar.add(Asignaciones);
@@ -114,8 +145,21 @@ public class MDI_SIU extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        System.exit(0);
+        ventanaseccion=new Seccion_QuemeH();
+        jDesktopPane1.add(ventanaseccion);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void saveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemActionPerformed
+        // TODO add your handling code here:
+        ventanafacultad=new Facultad_QuemeH();
+        jDesktopPane1.add(ventanafacultad);
+    }//GEN-LAST:event_saveAsMenuItemActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+        // TODO add your handling code here:
+        ventanaam=new AsignacionM_QuemeH();
+        jDesktopPane1.add(ventanaam);
+    }//GEN-LAST:event_copyMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +205,7 @@ public class MDI_SIU extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuBar menuBar;
