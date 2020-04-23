@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import Mantenimiento.inf_M_Al_FloresK;
 
 /**
  *
@@ -10,6 +11,7 @@
  */
 public class MDI_SIU extends javax.swing.JFrame {
 
+ private inf_M_Al_FloresK ventanaMA;
     /**
      * Creates new form MDI_SIU
      */
@@ -27,6 +29,7 @@ public class MDI_SIU extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
         Mantenimientos = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -43,6 +46,20 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 710, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+        );
+
+        desktopPane.add(jDesktopPane1);
+        jDesktopPane1.setBounds(0, 0, 710, 470);
+
         Mantenimientos.setMnemonic('f');
         Mantenimientos.setText("Mantenimientos");
 
@@ -52,6 +69,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         saveMenuItem.setMnemonic('s');
         saveMenuItem.setText("Alumnos");
+        saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveMenuItemActionPerformed(evt);
+            }
+        });
         Mantenimientos.add(saveMenuItem);
 
         saveAsMenuItem.setMnemonic('a');
@@ -80,6 +102,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         cutMenuItem.setMnemonic('t');
         cutMenuItem.setText("Asignar Alumno");
+        cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cutMenuItemActionPerformed(evt);
+            }
+        });
         Asignaciones.add(cutMenuItem);
 
         copyMenuItem.setMnemonic('y');
@@ -116,6 +143,17 @@ public class MDI_SIU extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
+ 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cutMenuItemActionPerformed
+
+    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
+        ventanaMA =new inf_M_Al_FloresK();
+        jDesktopPane1.add( ventanaMA);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_saveMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +199,7 @@ public class MDI_SIU extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuBar menuBar;
