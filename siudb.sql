@@ -56,7 +56,9 @@ codigo_C varchar(5) not null,
 codigo_S varchar(5) not null,
 codigo_Ca varchar(5) not null,
 codigo_F varchar(5) not null,
+
 codigo_Se varchar(5) not null,
+
 
 foreign key (codigo_A) references
 Alumnos(carnet_Alumnos),
@@ -77,7 +79,9 @@ codigo_C varchar(5) not null,
 codigo_S varchar(5) not null,
 codigo_Ca varchar(5) not null,
 codigo_F varchar(5) not null,
+
 codigo_Se varchar(5) not null,
+
 
 foreign key (codigo_M) references
 Maestros(carnet_Maestros),
@@ -90,3 +94,7 @@ Carreras(codigo_Carreras),
 foreign key (codigo_F) references
 Facultad(codigo_Facultad)
 )engine=InnoDB;
+
+drop database siu;
+
+select * from facultad;

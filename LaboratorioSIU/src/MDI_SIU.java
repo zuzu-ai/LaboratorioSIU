@@ -1,3 +1,6 @@
+import Mantenimiento.Seccion_QuemeH;
+import Mantenimiento.Facultad_QuemeH;
+import Asignaciones.AsignacionM_QuemeH;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +14,13 @@ import Mantenimiento.inf_M_Al_FloresK;
  */
 public class MDI_SIU extends javax.swing.JFrame {
 
+
  private inf_M_Al_FloresK ventanaMA;
+
+    Facultad_QuemeH ventanafacultad;
+    Seccion_QuemeH ventanaseccion;
+    AsignacionM_QuemeH ventanaam;
+
     /**
      * Creates new form MDI_SIU
      */
@@ -78,6 +87,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         saveAsMenuItem.setMnemonic('a');
         saveAsMenuItem.setText("Facultad");
+        saveAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveAsMenuItemActionPerformed(evt);
+            }
+        });
         Mantenimientos.add(saveAsMenuItem);
 
         jMenuItem1.setText("Carreras");
@@ -111,6 +125,11 @@ public class MDI_SIU extends javax.swing.JFrame {
 
         copyMenuItem.setMnemonic('y');
         copyMenuItem.setText("Asignar Maestro");
+        copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyMenuItemActionPerformed(evt);
+            }
+        });
         Asignaciones.add(copyMenuItem);
 
         menuBar.add(Asignaciones);
@@ -141,7 +160,8 @@ public class MDI_SIU extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        System.exit(0);
+        ventanaseccion=new Seccion_QuemeH();
+        jDesktopPane1.add(ventanaseccion);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
@@ -154,6 +174,17 @@ public class MDI_SIU extends javax.swing.JFrame {
         jDesktopPane1.add( ventanaMA);
         // TODO add your handling code here:
     }//GEN-LAST:event_saveMenuItemActionPerformed
+    private void saveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemActionPerformed
+        // TODO add your handling code here:
+        ventanafacultad=new Facultad_QuemeH();
+        jDesktopPane1.add(ventanafacultad);
+    }//GEN-LAST:event_saveAsMenuItemActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+        // TODO add your handling code here:
+        ventanaam=new AsignacionM_QuemeH();
+        jDesktopPane1.add(ventanaam);
+    }//GEN-LAST:event_copyMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
